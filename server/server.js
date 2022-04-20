@@ -24,7 +24,6 @@ app.command('/schedule', async ({ command, ack, say }) => {
     };
     const date = new Date();
     date.setDate(date.getDate() + message.date);
-    console.log(date.getDate());
     date.setHours(message.hours, message.minutes, message.seconds);
     const newDate = Math.floor(date.getTime() / 1000);
     const result = await app.client.chat.scheduleMessage({
