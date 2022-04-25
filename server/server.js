@@ -10,6 +10,19 @@ const app = new App({
   // appToken: process.env.APP_TOKEN,
 });
 
+/**
+ * Schedule command
+ *
+ * At the moment, for simplicity sake, date is initialized to current date
+ *
+ * If you want to schedule message for tomorrow, you would input /schedule your-text|1|hours|minutes|seconds
+ *
+ * The one symbolizes one day after current day
+ *
+ * This is something that needs to be fixed at some point
+ *
+ * Another thing to consider is that @channel command does not work and will need additional research to potentially implement
+ */
 app.command('/schedule', async ({ command, ack, say }) => {
   try {
     await ack();
